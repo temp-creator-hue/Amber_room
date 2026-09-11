@@ -368,3 +368,7 @@ footer{
   object-fit: cover;
   border-radius: 10px; 
 }
+
+nav .special-nav{
+  color:#c98a3e ;
+}
