@@ -1,0 +1,362 @@
+body {
+    background-color: #14120f;
+    color: #ece6d8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0px;
+}
+
+nav ul{
+  display: flex;
+  list-style-type: none;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+nav{
+  font-size: 15px;
+  margin: 0px;
+  padding: 0px;
+  border-bottom: 1px solid #35301f;
+}
+nav ul li a{
+  color:#ece6d8;
+  text-decoration: none;
+  margin:1rem;
+  padding:15px;
+}
+nav ul li a:hover{
+  color:#c98a3e;
+}
+
+/* ---- hero ---- */
+header{
+  padding: 60px 20px 80px 20px;
+}
+.hero_row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: center;
+}
+.hero_copy{
+  flex: 1;
+  min-width: 320px;
+}
+.kicker{
+  color: #c98a3e;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+header h1{
+  font-size: 55px;
+  line-height: 1.1;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  animation: slide_in 1s;
+}
+.describe{
+  font-size:19px;
+  color: #9c9482;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+.describe_blue{
+  color: #ece6d8;
+}
+.hero_buttons{
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.btn_main{
+  background-color: #c98a3e;
+  color: #1d1300;
+  text-decoration: none;
+  padding: 13px 26px;
+  font-size: 15px;
+}
+.btn_main:hover{
+  background-color: #e4a657;
+}
+.btn_ghost{
+  border: 1px solid #35301f;
+  color: #ece6d8;
+  text-decoration: none;
+  padding: 13px 26px;
+  font-size: 15px;
+}
+.btn_ghost:hover{
+  border-color: #c98a3e;
+}
+
+.hero_photo{
+  flex: 1;
+  min-width: 260px;
+  background-color: #1d1a15;
+  border: 1px solid #35301f;
+  height: 220px;
+  padding: 20px;
+  animation: slide_in 1.2s;
+}
+.wave_svg{
+  width: 100%;
+  height: 100%;
+}
+.wave_svg rect{
+  fill: #c98a3e;
+  opacity: 0.85;
+}
+
+@keyframes slide_in{
+  from{
+    opacity: 0;
+    transform: translateX(200px);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.page_break {
+  width: 100%;
+  border: none;
+  height: 2px;
+  background-color: #35301f;
+  margin: 0px 0;
+}
+
+.part_sec{
+  margin-top: 50px;
+  margin-left: 20px;
+  font-weight: 500;
+  font-size: 26px;
+  color:#c98a3e;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.line2{
+  margin-left: 20px;
+  font-size: 34px;
+  margin-bottom: 30px;
+}
+
+/* ---- services cards ---- */
+.card_grid{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  gap: 20px;
+}
+.cards{
+  height: 200px;
+  width: 300px;
+  padding: 20px;
+  border: 2px;
+  border-style: solid;
+  border-color: #35301f;
+  transition: transform 1s ease;
+}
+.card_wide{
+  width: 460px;
+}
+.cards h1{
+  font-size: 20px;
+  transition: transform 1s ease;
+}
+.cards p{
+  font-size: 15px;
+  color: #9c9482;
+}
+.cards .price{
+  color: #c98a3e;
+  font-size: 13px;
+}
+.cards:hover{
+  transform: translateY(-15px);
+  border-color:#c98a3e;
+}
+.cards:hover h1{
+  transform: translateX(10px);
+}
+
+/* ---- player ---- */
+.player_section{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.player_box{
+  background-color: #1d1a15;
+  border: 2px solid #35301f;
+  padding: 25px;
+  max-width: 700px;
+}
+.player_top{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+.cover_art{
+  height: 120px;
+  width: 120px;
+  background-color: #c98a3e;
+  color: #1d1300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.player_info{
+  flex: 1;
+  min-width: 240px;
+}
+.now_track{
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+.now_artist{
+  color: #9c9482;
+  margin-top: 5px;
+  margin-bottom: 18px;
+}
+.progress_row{
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.progress_row span{
+  font-size: 12px;
+  color: #9c9482;
+  margin: 0 8px;
+}
+.progress_row input{
+  flex: 1;
+}
+.transport{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.transport_btn{
+  background-color: transparent;
+  border: 1px solid #35301f;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: #ece6d8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.transport_btn svg{
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+.transport_btn:hover{
+  border-color: #c98a3e;
+}
+.transport_btn_play{
+  width: 48px;
+  height: 48px;
+  background-color: #c98a3e;
+  border-color: #c98a3e;
+  color: #1d1300;
+}
+.transport_btn_play:hover{
+  background-color: #e4a657;
+}
+.volume_row{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+.volume_row svg{
+  width: 18px;
+  height: 18px;
+  fill: #9c9482;
+}
+.volume_row input{
+  width: 100px;
+}
+
+.track_list{
+  list-style-type: none;
+  margin-top: 20px;
+  padding: 0px;
+  border-top: 1px solid #35301f;
+}
+.track_list li{
+  padding: 12px 6px;
+  cursor: pointer;
+}
+.track_list li:hover{
+  background-color: #242019;
+}
+.track_list li.active{
+  background-color: #242019;
+  color: #c98a3e;
+}
+
+.note{
+  color: #9c9482;
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+/* ---- booking form, styling from my old contact_me.css / Uiverse.io by andrew-demchenk0 ---- */
+.book{
+  padding-left: 20px;
+  padding-bottom: 40px;
+}
+.form{
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.input{
+  background-color: #1d1a15;
+  border: 1px solid #35301f;
+  color: #ece6d8;
+  padding: 12px;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+.input:focus{
+  outline: none;
+  border-color: #c98a3e;
+}
+.error{
+  color: #e0876b;
+  font-size: 13px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  min-height: 14px;
+}
+.button-confirm {
+  background-color: #c98a3e;
+  color: #1d1300;
+  border: none;
+  padding: 12px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 15px;
+}
+.button-confirm:hover{
+  background-color: #e4a657;
+}
+.form_status{
+  color: #6e8f70;
+  margin-top: 10px;
+}
+
+footer{
+  padding: 20px;
+  color: #9c9482;
+  font-size: 13px;
+}
+
+/* d9868408355@K */

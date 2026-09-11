@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./style.css">
+    <title>Amber Room Audio</title>
+  </head>
+  <body>
+
+    <nav>
+    <ul>
+    <li><a href="#top">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Listen</a></li>
+    <li><a href="#book">Book time</a></li>
+    </ul>
+    </nav>
+
+    <header id="top">
+      <div class="hero_row">
+
+        <div class="hero_copy">
+        <p class="kicker">A recording & mixing studio in Brooklyn</p>
+        <h1>Every session starts<br>with a good room.</h1>
+        <div class="describe">We track vocals, edit podcasts, and mix live sets for artists
+        who'd rather spend the afternoon making something than fighting
+        with software. <span class="describe_blue">Two rooms, analog outboard, one engineer per project.</span></div>
+
+        <div class="hero_buttons">
+          <a href="#work" class="btn_main">Listen to the work</a>
+          <a href="#book" class="btn_ghost">Book studio time</a>
+        </div>
+        </div>
+
+        <div class="hero_photo">
+          <svg class="wave_svg" viewBox="0 0 320 180" preserveAspectRatio="none">
+            <g id="wave_bars"></g>
+          </svg>
+        </div>
+
+      </div>
+    </header>
+
+    <hr class="page_break">
+
+    <section class="services" id="services">
+      <p class="part_sec">What happens in the room</p>
+      <p class="line2">Four ways to work with us</p>
+
+      <div class="card_grid">
+
+        <div class="cards card_wide">
+          <h1>Vocal tracking</h1>
+          <p>Lead and harmony takes through our Neumann/API chain, comped
+          and pitched same day so you leave with a session you can mix.</p>
+          <p class="price">From $180 / half day</p>
+        </div>
+
+        <div class="cards">
+          <h1>Podcast editing</h1>
+          <p>Noise cleanup, level matching and a tight edit for interview
+          and narrative shows.</p>
+          <p class="price">From $60 / episode</p>
+        </div>
+
+        <div class="cards">
+          <h1>Live event mixing</h1>
+          <p>Front of house and multitrack capture, rough mix by the
+          next morning.</p>
+          <p class="price">From $350 / event</p>
+        </div>
+
+        <div class="cards card_wide">
+          <h1>Mixing & mastering</h1>
+          <p>Stem or full mixes with two rounds of revisions built into
+          every quote.</p>
+          <p class="price">From $220 / track</p>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="page_break">
+
+    <section class="player_section" id="work">
+      <p class="part_sec">Recent sessions</p>
+      <p class="line2">A few tracks that came out of the room this year</p>
+
+      <div class="player_box">
+
+        <div class="player_top">
+
+          <div class="cover_art" id="cover_art"><span id="cover_initials">AR</span></div>
+
+          <div class="player_info">
+            <p class="now_track" id="now_track">Select a track</p>
+            <p class="now_artist" id="now_artist">-</p>
+
+            <div class="progress_row">
+              <span id="time_current">0:00</span>
+              <input type="range" id="seek" min="0" max="100" value="0" step="0.1">
+              <span id="time_total">0:00</span>
+            </div>
+
+            <div class="transport">
+              <button id="btn_prev" class="transport_btn" title="previous">
+                <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zM20 6L10 12l10 6z"/></svg>
+              </button>
+              <button id="btn_play" class="transport_btn transport_btn_play" title="play">
+                <svg id="icon_play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                <svg id="icon_pause" viewBox="0 0 24 24" hidden><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+              </button>
+              <button id="btn_next" class="transport_btn" title="next">
+                <svg viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM4 6l10 6L4 18z"/></svg>
+              </button>
+
+              <div class="volume_row">
+                <svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 5V4L8 9z"/></svg>
+                <input type="range" id="volume" min="0" max="100" value="80">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <ul class="track_list" id="track_list">
+        </ul>
+
+      </div>
+
+      <p class="note">note - drop your own mp3s in /audio and match the paths in script.js to hear playback</p>
+    </section>
+
+    <hr class="page_break">
+
+    <section class="book" id="book">
+      <p class="part_sec">Book studio time</p>
+      <p class="line2">Tell us what you're working on</p>
+
+      <!-- form style copied from my old contact_me.html, just re-wired for validation in script.js -->
+      <form class="form" id="booking_form" novalidate>
+        <input type="text" placeholder="Name" name="name" id="f_name" class="input">
+        <p class="error" id="err_name"></p>
+
+        <input type="email" placeholder="Email" name="email" id="f_email" class="input">
+        <p class="error" id="err_email"></p>
+
+        <select name="project" id="f_project" class="input">
+          <option value="" selected disabled>Project type</option>
+          <option value="vocal-tracking">Vocal tracking</option>
+          <option value="podcast-editing">Podcast editing</option>
+          <option value="live-event">Live event mixing</option>
+          <option value="mixing-mastering">Mixing & mastering</option>
+          <option value="other">Something else</option>
+        </select>
+        <p class="error" id="err_project"></p>
+
+        <input type="text" placeholder="Message" name="message" id="f_message" class="input">
+        <p class="error" id="err_message"></p>
+
+        <button type="submit" class="button-confirm">Send message →</button>
+        <p class="form_status" id="form_status"></p>
+      </form>
+    </section>
+
+    <hr class="page_break">
+
+    <footer>
+      <p>Amber Room Audio - Brooklyn, NY</p>
+      <p>hello@amberroomaudio.example</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
