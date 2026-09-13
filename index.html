@@ -8,7 +8,7 @@
 
     <nav>
     <ul>
-    <li><a href="#top">Amber&nbsp; Room</a></li>
+    <li><a href="#top" class="speacial-nav">Amber&nbsp; Room</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#work">Listen</a></li>
     <li><a href="#book">Book time</a></li>
@@ -137,28 +137,28 @@
 
       <!-- form style copied from my old contact_me.html, just re-wired for validation in script.js -->
       <form class="form" id="booking_form" novalidate>
-        <input type="text" placeholder="Name" name="name" id="f_name" class="input">
-        <p class="error" id="err_name"></p>
+  <input type="text" placeholder="Name" name="name" id="f_name" class="input">
+  <p class="error" id="err_name"></p>
 
-        <input type="email" placeholder="Email" name="email" id="f_email" class="input">
-        <p class="error" id="err_email"></p>
+  <input type="email" placeholder="Email" name="email" id="f_email" class="input">
+  <p class="error" id="err_email"></p>
 
-        <select name="project" id="f_project" class="input">
-          <option value="" selected disabled>Project type</option>
-          <option value="vocal-tracking">Vocal tracking</option>
-          <option value="podcast-editing">Podcast editing</option>
-          <option value="live-event">Live event mixing</option>
-          <option value="mixing-mastering">Mixing & mastering</option>
-          <option value="other">Something else</option>
-        </select>
-        <p class="error" id="err_project"></p>
+  <select name="project" id="f_project" class="input">
+    <option value="" selected disabled>Project type</option>
+    <option value="vocal-tracking">Vocal tracking</option>
+    <option value="podcast-editing">Podcast editing</option>
+    <option value="live-event">Live event mixing</option>
+    <option value="mixing-mastering">Mixing & mastering</option>
+    <option value="other">Something else</option>
+  </select>
+  <p class="error" id="err_project"></p>
 
-        <input type="text" placeholder="Message" name="message" id="f_message" class="input">
-        <p class="error" id="err_message"></p>
+  <input type="text" placeholder="Message" name="message" id="f_message" class="input">
+  <p class="error" id="err_message"></p>
 
-        <button type="submit" class="button-confirm">Send message →</button>
-        <p class="form_status" id="form_status"></p>
-      </form>
+  <button type="submit" class="button-confirm">Send message →</button>
+  <p class="form_status" id="form_status"></p>
+</form>
     </section>
 
     <hr class="page_break">

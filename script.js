@@ -204,64 +204,48 @@ function setup_player() {
   load_track(current_index, false);
 }
 
-// ------------------------------
-// booking form validation
-// ------------------------------
-function setup_booking_form() {
-  var booking_form = document.getElementById("booking_form");
-  if (!booking_form) return;
 
-  booking_form.onsubmit = function (e) {
-    e.preventDefault();
+//form validation
 
-    var ok = true;
+const db_url="https://script.google.com/macros/s/AKfycbynqnEsQmbEb1ZrBB83S_icdspsLZggGNfduRQfN_WDxyIOJyOk5vNGp7vuzSl0y7zu/exec"
+const control_of_contact_form = document.getElementById("booking_form");
 
-    var name = document.getElementById("f_name").value.trim();
-    if (name === "") {
-      document.getElementById("err_name").innerHTML = "enter your name";
-      ok = false;
-    } else {
-      document.getElementById("err_name").innerHTML = "";
+control_of_contact_form.addEventListener("button-confirm", async function(event){
+  let name = document.getElementById("f_name").value;
+  let email = document.getElementById("f_email").value;
+  let msg = document.getElementById("f_message").value;
+  let project = document.getElementById("f_project").value;
+
+try {
+  let response = await fetch (
+    db_url, 
+    {
+      method: "POST",
+      headers: {
+        "Content-Type":
+          "text/plain;charset=utf-8"
+      },
+      body: JSON.stringify({ 
+        action: "save_message",
+        name: name,
+        email: email,
+        msg: msg,
+        project:project
+      })
+        
     }
-
-    var email = document.getElementById("f_email").value.trim();
-    var email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (email === "") {
-      document.getElementById("err_email").innerHTML = "enter your email";
-      ok = false;
-    } else if (!email_pattern.test(email)) {
-      document.getElementById("err_email").innerHTML = "enter a valid email";
-      ok = false;
-    } else {
-      document.getElementById("err_email").innerHTML = "";
-    }
-
-    var project = document.getElementById("f_project").value;
-    if (project === "") {
-      document.getElementById("err_project").innerHTML = "choose a project type";
-      ok = false;
-    } else {
-      document.getElementById("err_project").innerHTML = "";
-    }
-
-    var message = document.getElementById("f_message").value.trim();
-    if (message === "") {
-      document.getElementById("err_message").innerHTML = "tell us about the project";
-      ok = false;
-    } else {
-      document.getElementById("err_message").innerHTML = "";
-    }
-
-    var status_el = document.getElementById("form_status");
-
-    if (!ok) {
-      status_el.innerHTML = "fix the fields above and try again";
-      status_el.style.color = "#e0876b";
-      return;
-    }
-
-    status_el.innerHTML = "thanks - we'll follow up within a day";
-    status_el.style.color = "#6e8f70";
-    booking_form.reset();
-  };
+  );
+  
+  let result = await response.json();
+  if (result.success) {
+    alert("Message submitted, will get back to you shortly!");
+  }
+  else{
+    alert("Message could not be saved!");
+  }
 }
+  catch(error){
+    console.error(error);
+    alert("There was a problem submitting the message!");
+  }
+});
